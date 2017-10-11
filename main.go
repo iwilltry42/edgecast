@@ -47,6 +47,10 @@ const (
 	MediaTypeADN   = 14
 )
 
+type Edgecast interface {
+
+}
+
 // Edgecast client for Go
 type Edgecast struct {
 	AccountID string
