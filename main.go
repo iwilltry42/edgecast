@@ -47,8 +47,12 @@ const (
 	MediaTypeADN   = 14
 )
 
-type Edgecast interface {
-
+// interface to be used for logging and instrumenting middleware
+type edgecast interface {
+	Bandwidth(int) (*BandwidthData, error)
+	Connections(int) (*ConnectionData, error)
+	CacheStatus(int) (*CacheStatusData, error)
+	StatusCodes(int) (*StatusCodeData, error)
 }
 
 // Edgecast client for Go
